@@ -1,0 +1,815 @@
+/* * {
+    margin: 0 !important;
+} */
+
+/* body */
+body {
+    background: #f6f6f6;
+    font-family: "Open Sans";
+}
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+h1, h2, h3, button {
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+label {
+    font-family: "Montserrat";
+    font-weight: 600; /*semi-bold*/ 
+}
+#app {
+    height: inherit;
+    width: inherit;
+}
+input {
+    font-family: "Open Sans";
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    button{
+        font-size: 18px;
+    }
+    .back-label {
+        font-size: 16px;
+        font-family: "Montserrat";
+        font-weight: 600; /*semi-bold*/ 
+    }
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    button {
+        font-size: 12px;
+    }
+}
+
+/* header */
+header {
+    background: #FFFFFF;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-header {
+    width: 70%;
+    display:flex;
+    align-items: center;
+}
+.nav-header img {
+    max-width: 60px;
+    padding: 0 20px 0 0
+}
+.nav-header a {
+    padding: 20px;
+    color: #4A4B4C;
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-header a.router-link-active {
+    color: #000000;
+    font-weight: bold;
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    header {
+        display: none;
+    }
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #FFFFFF;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.nav-footer {
+    display:flex;
+    align-items: center;
+}
+.nav-footer a {
+    padding: 0 20px;
+    color: #4A4B4C;
+    text-decoration: none;
+}
+.btn-home {
+    content:url("./ic_mobile_navigarion_home@3x.png")
+}
+a.router-link-exact-active .btn-home {
+    content:url("./ic_mobile_navigarion_home_active@3x.png")
+}
+.btn-about {
+    content:url("./ic_mobile_navigarion_info@3x.png")
+}
+a.router-link-exact-active .btn-about {
+    content:url("./ic_mobile_navigarion_info_active@3x.png")
+}
+.nav-footer img {
+    max-width: 40px;
+    margin: 0 100px;
+}
+.btn-home {
+    float: left;
+}
+.btn-about {
+    float: right;
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    footer {
+        display: none;
+    }
+}
+
+/* house listing */
+.houses {
+    margin: auto;
+    width: 70%;
+}
+.house-listing {
+    margin-bottom: 60px;
+}
+button {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+}
+.button-right, .button-left {
+    float: right; 
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+.container-btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+.button-right.active,
+.button-left.active {
+  background-color: #eb5440;
+}
+.btn-group .button-right {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.btn-group .button-left {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.search-button {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+}
+.search-button img,
+.clear-button img {
+    width: 15px;
+    height: 15px;
+}
+.house {
+    position: relative; 
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(104, 103, 103, 0.315), 0 6px 8px 0 rgba(83, 82, 82, 0.19);
+}
+.filtered-house a {
+    text-decoration: none;
+    color:#000000
+}
+.edit-button-sm img {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 30px 15px 0 0;
+    height: 20px;
+}
+.delete-button-sm, .edit-button-sm {
+    float: right;
+}
+.delete-button-sm img {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 30px 15px 0 0;
+    height: 20px;
+}
+.house-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.house-info {
+    display: flex;
+    align-items: center;
+}
+.info {
+    margin-left: 20px;
+}
+.info img {
+    width: 10px;
+    height: 10px;
+}
+.house-info .house-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 7px;
+    margin-left: 10px;
+}
+.btn-group button {
+    padding: 10px 30px;
+    background-color: #c3c3c3;
+}
+.input-field {
+    background: url("./ic_search@3x.png") no-repeat 10px;
+    background-size: 15px
+}
+.btn-clear {
+    width: 15px;
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    .create-button {
+        padding: 7px 15px;
+        border-radius: 7px;
+        background-color: #EB5440;
+    }
+    .create-button span{
+        text-transform: uppercase;
+    }
+    .input-field-sm,
+    .create-button img {
+        display: none
+    }
+    .input-field-container {
+        position: relative;
+        width: 40%;
+    }
+    button {
+        font-size: 18px;
+    }
+    .edit-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        height: 20px;
+    }
+    .delete-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        height: 20px;
+    }
+    .input-field {
+        border-radius: 7px;
+        padding: 10px 0 10px 30px;
+        background-color: #E8E8E8;
+        border: none;
+        color: #4A4B4C;
+        outline: none;
+        flex-grow: 0.3
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+    .btn-group {
+        flex-grow: 0.67
+    }
+    .flex-container > button {
+        margin-left: -50px;
+    }
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    .input-field-container,
+    .create-button span {
+        display: none
+    }
+    .create-button img {
+        max-width: 20px;
+    }
+    .container .h1 {
+        margin: auto
+    }
+    .btn-group {
+        width: 100%;
+    }
+    .btn-group button {
+        padding: 12px 30px;
+        background-color: #c3c3c3;
+        width: 50%
+    }
+    button {
+        font-size: 12px;
+    }
+    .edit-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: 20px;
+    }
+    .delete-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: 20px;
+    }
+    .delete-button, .edit-button {
+        float: right;
+    }
+    .clear-button {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border: none;
+        padding: 0;
+    }
+    .input-field {
+        width: calc(100% - 30px);
+        border-radius: 7px;
+        padding: 12px 0 12px 30px;
+        background-color: #E8E8E8;
+        border: none;
+        color: #4A4B4C;
+        outline: none;
+        margin-bottom: 10px;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 0;
+        position: relative;
+    }
+    .flex-container > button {
+        width: 15px;
+        position: absolute;
+        top: 13%;
+        right: 20px;
+    }
+}
+.back-button-sm {
+    float: left;
+}
+.back-button img {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    height: 20px;
+}
+.back-button-sm img {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 30px 0 0 15px;
+    height: 20px;
+}
+.recommended-house {
+    background-color: #FFFFFF;
+    position: relative; 
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(104, 103, 103, 0.315), 0 6px 8px 0 rgba(83, 82, 82, 0.19);
+}
+.recommended-card-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.recommended-card-text p, 
+.recommended-card-text h3 {
+    padding: 0 10px;
+}
+.recommended-card-text img {
+    width: 10px;
+    height: 10px;
+} 
+.recommended-card-info-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    padding: 10px;
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    .house-details {
+        margin: auto;
+        width: 70%;
+    }
+    .back-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        height: 20px;
+    }
+    .wrapper-house-details {
+        display: flex;
+        align-items: center;
+    }
+    .wrapper-house-details h3 {
+        font-size: 16px;
+    }
+    .wrapper-house-card-sm,
+    .house-card-text h3 {
+        display: none
+    }
+    .wrapper-house-card {
+        display: flex;
+    }
+    .house-card {
+        width: 60%;
+        margin: 0 30px 0 0;
+        background-color: #FFFFFF;
+    }
+    .house-card-info-img-container {
+        width: 600px;
+        height: 300px;
+    }
+    .house-card-info-img-sm{
+        width: 100%;
+        height: 100%;
+        margin-top: -60px;
+        position: relative;
+        z-index: -1;
+    }
+    .house-card-info-img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    .house-card-text {
+        position: relative; 
+        padding: 10px;
+    }
+    .house-card-text p img {
+        height: 10px;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    .house-card-actions {
+        position: absolute;
+        top: 10%;
+        right: 1%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .recommended {
+        width: 40%;
+        margin: -20px 0 0 30px;
+    }
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    .back-button img {
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: 20px;
+    }
+    .wrapper-house-details p,
+    .house-card-text h1,
+    .house-card-info-img,
+    .house-card-actions  {
+        display: none
+    }
+    .house-card-info-img-sm{
+        width: 100%;
+        height: 100%;
+        margin-top: -60px;
+        position: relative;
+        z-index: -1;
+    }
+    .house-card-text {
+        background-color: #FFFFFF;
+        border-radius: 40px 40px 0px 0px;
+        margin-top: -40px;
+        position: relative; 
+        padding: 20px;
+    }
+    .house-card-icons{
+        margin-left: -20px
+    }
+    .house-card-text p img {
+        height: 15px;
+        background: none;
+        border: none;
+        padding: 0 3px 0 20px;
+        margin:auto
+    }
+    .recommended {
+        width: 90%;
+        margin: 100px auto 
+    }
+    picture img {
+        padding: 30px 0 0 15px;
+    }
+}
+
+/* not found */
+.no-results-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.no-results {
+    width: 35%;
+    text-align: center;
+}
+.no-results img {
+    width: 220px;
+    height: 110px;
+}
+.no-results p {
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500; /*medium*/ 
+}
+
+/* house-create, house-edit */
+.background-wrapper {
+    background-image: url("./img_background@3x.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.house-create,
+.house-edit {
+    margin: 30px auto auto auto;
+    width: 70%;
+}
+label{
+    display:block;
+    width: calc(100% + 40px);
+}
+input[type=file] {
+    opacity: 0;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+.input-wrapper {
+    border-style: dashed;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("./ic_upload@3x.png");
+    position:relative;
+}
+.full-size input[type=text], .full-size input[type=number], textarea{
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #4A4B4C;
+    outline: none;
+    padding: 12px 0 12px 20px;
+}
+.half-size select{
+    width: calc(100% + 20px);
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #4A4B4C;
+    outline: none;
+    padding: 12px 20px;
+}
+.half-size input[type=text], .half-size input[type=number] {
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #4A4B4C;
+    outline: none;
+    padding: 12px 0 12px 20px;
+    width: 100%;
+}
+.back-button {
+    float: left;
+}
+.clear-button-white {
+    position: absolute;
+    top: 5px;
+    left: 130px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+.clear-button-white img {
+    width: 35px;
+    height: 35px;
+}
+form {
+    position: relative;
+    /*testing grid*/
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 10px;
+    margin-left: -30px;
+}
+/*testing grid*/
+.full-size {
+    grid-column: 1 / span 2;
+}
+form > div {
+    padding: 12px 20px;
+}
+.submit-form-button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 0;
+    width: calc(100% + 20px);
+    border-radius: 7px;
+    text-transform: uppercase;
+    background-color: #EB5440;
+    cursor: pointer;
+}
+.house-create-wrapper,
+.house-edit-wraper {
+    margin-bottom: 60px;
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    .house-create-wrapper, 
+    .house-edit-wraper {
+    width: 50%;
+    }
+    /*testing grid*/
+    .form-btn-wrapper {
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    /*testing grid*/
+    .form-btn-wrapper {
+        grid-column: 1 / span 2;
+    }
+}
+/* Hide arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* modal */
+.modal {
+    width: 400px;
+    padding: 50px;
+    margin: 100px auto;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal h3,
+.modal p   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.backdrop {
+    top: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal button,
+.modal a {
+    padding: 7px 15px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    margin: 5px 0;
+}
+.modal-delete {
+    background-color: #EB5440;
+}
+.modal-back {
+    background-color: #4A4B4C;
+}
+
+/* about */
+.about {
+    margin: auto;
+    width: 70%;
+}
+.about-logo{
+    display: flex; align-items: center;
+}
+.about-logo span {
+    padding-left: 15px;
+}
+.about-logo span a {
+    text-decoration: none;
+}
+/* Small devices */
+@media (max-width: 1000px) {
+    .about > h1::after {
+        content: "About"
+    }
+    .about-logo img {
+        width: 150px;
+        padding-right: 15px;
+    }
+}
+/* Large devices */
+@media (min-width: 1000px) {
+    .about > h1::after {
+        content: "About DTT Real Estate"
+    }
+    .about-hidden-h2 {
+        display: none
+    }
+    .about-logo img {
+        width: 250px;
+        padding-right: 15px;
+    }
+}
